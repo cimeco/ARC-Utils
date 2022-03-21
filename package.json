@@ -1,0 +1,19 @@
+{
+  "name": "utils",
+  "version": "1.0.0",
+  "description": "utilities",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cimeco/utils.git"
+  },
+  "author": "Franco Pautasso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cimeco/utils/issues"
+  },
+  "homepage": "https://github.com/cimeco/utils#readme"
+}
