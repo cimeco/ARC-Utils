@@ -15,8 +15,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: npm ci
-      - run: npm test
 
   publish-npm:
     needs: build
@@ -30,4 +28,4 @@ jobs:
       - run: npm ci
       - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPMTOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.npmtoken}}
