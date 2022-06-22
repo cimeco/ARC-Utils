@@ -25,7 +25,7 @@ import pushWhen from "./pushWhen";
 import sectionConfig from "./sectionConfig";
 import sectionNavigation from "./sectionNavigation";
 
-export default {
+export {
     arcApiRequestOptions,
     contentSourceToPromise,
     dateTimeToTime,
