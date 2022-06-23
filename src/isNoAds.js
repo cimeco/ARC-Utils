@@ -1,3 +1,3 @@
-export default requestUri => {
-  return requestUri.includes("outputType=noads");
-};
+export default function isNoAds(requestUri) {
+  return requestUri.includes('outputType=noads');
+}

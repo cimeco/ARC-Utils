@@ -1,12 +1,9 @@
-import { useContent } from "fusion:content";
+import { useContent } from 'fusion:content';
 
-const getAuthorInfo = id => {
+export default function getAuthorInfo(id) {
   const query = { authorID: id };
-  const authorInfo = useContent({
-    source: "authorInfo",
+  return useContent({
+    source: 'authorInfo',
     query: query
   });
-  return authorInfo;
-};
-
-export default getAuthorInfo;
+}

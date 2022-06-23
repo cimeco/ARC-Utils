@@ -1,12 +1,12 @@
-import _ from "lodash";
-import getTaxonomiesBySite from "./card/getTaxonomiesBySite";
+import _ from 'lodash';
+import getTaxonomiesBySite from './story/getTaxonomiesBySite';
 
-const dataContent = content => {
+const dataContent = (content) => {
   if (!_.isUndefined(content)) {
     switch (content.type) {
-      case "results":
+      case 'results':
         return content.content_elements[0];
-      case "story":
+      case 'story':
         return content;
       default:
         return undefined;
@@ -15,15 +15,12 @@ const dataContent = content => {
   return undefined;
 };
 
-export default content => {
-  const sectionTarget =
-    !_.isUndefined(dataContent(content)) &&
+export default function getNodeName(content) {
+  return !_.isUndefined(dataContent(content)) &&
     !_.isUndefined(getTaxonomiesBySite(dataContent(content)).primary_section)
-      ? _.trim(
-          getTaxonomiesBySite(dataContent(content)).primary_section.path,
-          "/"
-        )
-      : null;
-
-  return sectionTarget;
-};
+    ? _.trim(
+        getTaxonomiesBySite(dataContent(content)).primary_section.path,
+        '/'
+      )
+    : null;
+}

@@ -1,12 +1,10 @@
-import { useContent } from "fusion:content";
+import { useContent } from 'fusion:content';
 
-const getSectionInfo = (_id, arcSite) => {
+export default function getSectionInfo(_id, arcSite) {
   const query = { _id };
-  query["arc-site"] = arcSite;
+  query['arc-site'] = arcSite;
   return useContent({
-    source: "sectionInfo",
+    source: 'sectionInfo',
     query
   });
-};
-
-export default getSectionInfo;
+}

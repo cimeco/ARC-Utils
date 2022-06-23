@@ -1,8 +1,12 @@
-import _ from "lodash";
-import { CONTENT_BASE, ARC_ACCESS_TOKEN } from "fusion:environment";
-import request from "request-promise-native";
+import _ from 'lodash';
+import request from 'request-promise-native';
+import { CONTENT_BASE, ARC_ACCESS_TOKEN } from 'fusion:environment';
 
-export default (source, key = {}, isContentApi = false) => {
+export default function contentSourceToPromise(
+  source,
+  key = {},
+  isContentApi = false
+) {
   if (!_.isUndefined(source.fetch)) {
     return source.fetch(key);
   }
@@ -16,7 +20,7 @@ export default (source, key = {}, isContentApi = false) => {
   };
 
   return request({
-    url: `${isContentApi ? CONTENT_BASE : ""}${source.resolve(key)}`,
+    url: `${isContentApi ? CONTENT_BASE : ''}${source.resolve(key)}`,
     ...options
   });
-};
+}

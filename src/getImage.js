@@ -1,4 +1,4 @@
-import { ENVIRONMENT, USE_DEPLOYMENT_IN } from "fusion:environment";
+import { ENVIRONMENT, USE_DEPLOYMENT_IN } from 'fusion:environment';
 
 export default function getImage(
   arcSite,
@@ -8,7 +8,7 @@ export default function getImage(
   forceResource = false
 ) {
   if (
-    (ENVIRONMENT === "grupoclarin" || url.includes("http")) &&
+    (ENVIRONMENT === 'grupoclarin' || url.includes('http')) &&
     USE_DEPLOYMENT_IN !== arcSite &&
     !forceResource
   ) {

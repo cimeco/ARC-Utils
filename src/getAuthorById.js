@@ -1,8 +1,8 @@
-import _ from "lodash";
+import _ from 'lodash';
 
-export default (articleObject, id) => {
+export default function getAuthorById(articleObject, id) {
   const authors = articleObject.credits.by || [];
-  return _.find(authors, author => {
+  return _.find(authors, (author) => {
     return author._id === id;
   });
-};
+}

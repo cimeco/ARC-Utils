@@ -1,6 +1,6 @@
-import { ENVIRONMENT } from "fusion:environment";
-import _ from "lodash";
-import { website } from "./params";
+import { ENVIRONMENT } from 'fusion:environment';
+import _ from 'lodash';
+import { website } from './params';
 
 export default function getUrlBySite(
   contextPath,
@@ -9,13 +9,13 @@ export default function getUrlBySite(
   keepParams = false
 ) {
   if (_.isNil(url)) {
-    return "";
+    return '';
   }
 
-  let _url = url.replace("/homepage", "");
-  if (keepParams) _url = _url.replace(/[?].+/, "");
-  if (ENVIRONMENT === "grupoclarin" || url.includes("http")) {
-    return _url.endsWith("/") ? _url : `${_url}/`;
+  let _url = url.replace('/homepage', '');
+  if (keepParams) _url = _url.replace(/[?].+/, '');
+  if (ENVIRONMENT === 'grupoclarin' || url.includes('http')) {
+    return _url.endsWith('/') ? _url : `${_url}/`;
   }
 
   return `${contextPath}${website(_url)(arcSite)}`;

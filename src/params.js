@@ -1,23 +1,23 @@
-const appendParam = param => {
+const appendParam = (param) => {
   function defineParam(href) {
     function defineValue(value) {
-      const hrefParts = (href || "").split("#");
+      const hrefParts = (href || '').split('#');
       const uri = hrefParts[0];
-      const hash = hrefParts.slice(1).join("#");
-      const urlParts = uri.split("?");
+      const hash = hrefParts.slice(1).join('#');
+      const urlParts = uri.split('?');
       const endpoint = urlParts[0];
-      const query = urlParts.slice(1).join("?");
+      const query = urlParts.slice(1).join('?');
       const params =
-        typeof value !== "undefined"
+        typeof value !== 'undefined'
           ? [`${param}=${encodeURIComponent(String(value))}`]
           : [];
       const queryList = params.concat(
-        query.split("&").filter(q => {
+        query.split('&').filter((q) => {
           return q && !RegExp(`^${param}=`).test(q);
         })
       );
 
-      return `${endpoint}?${queryList.join("&")}${hash ? `#${hash}` : ""}`;
+      return `${endpoint}?${queryList.join('&')}${hash ? `#${hash}` : ''}`;
     }
 
     return defineValue;
@@ -26,10 +26,10 @@ const appendParam = param => {
   return defineParam;
 };
 
-const website = appendParam("_website");
+const website = appendParam('_website');
 
-const page = appendParam("page");
+const page = appendParam('page');
 
-const outputType = appendParam("outputType");
+const outputType = appendParam('outputType');
 
 export { page, website, outputType };

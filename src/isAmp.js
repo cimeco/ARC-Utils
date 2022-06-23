@@ -1,3 +1,3 @@
-export default requestUri => {
-  return requestUri.includes("outputType=amp");
-};
+export default function isAmp(requestUri) {
+  return requestUri.includes('outputType=amp');
+}

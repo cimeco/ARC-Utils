@@ -1,6 +1,5 @@
-import _ from "lodash";
+import _ from 'lodash';
 
-const isNEU = object => {
+export default function isNEU(object) {
   return _.isEmpty(object) || _.isNull(object) || _.isUndefined(object);
-};
-export default isNEU;
+}

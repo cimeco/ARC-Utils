@@ -1,13 +1,13 @@
 const socialLinks = [
-  "email",
-  "twitter",
-  "youtube",
-  "linkedin",
-  "instagram",
-  "facebook"
+  'email',
+  'twitter',
+  'youtube',
+  'linkedin',
+  'instagram',
+  'facebook'
 ];
 
-const minimizeAuthor = author => {
+export default function minimizeAuthor(author) {
   return {
     ...author,
     byline:
@@ -23,10 +23,8 @@ const minimizeAuthor = author => {
     image: (author.image && author.image.url) || author.image, // TODO: ver como trae en vp y en la
     social_links:
       author.socialLinks ||
-      socialLinks.map(link => {
+      socialLinks.map((link) => {
         return { site: link, url: author[link] };
       })
   };
-};
-
-export default minimizeAuthor;
+}

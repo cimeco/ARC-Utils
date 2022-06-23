@@ -1,5 +1,5 @@
-import getProperties from "fusion:properties";
-import _ from "lodash";
+import _ from 'lodash';
+import getProperties from 'fusion:properties';
 
 export default function sectionConfig(arcSite, sectionId) {
   const defaultSectionConfig =
