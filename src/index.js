@@ -1,5 +1,4 @@
 import arcApiRequestOptions from './arcApiRequestOptions';
-import contentSourceToPromise from './contentSourceToPromise';
 import dateTimeToTime from './dateTimeToTime';
 import * as defaultAuthor from './defaultAuthor';
 import * as errors from './errors';
@@ -27,7 +26,6 @@ import sectionNavigation from './sectionNavigation';
 
 export {
   arcApiRequestOptions,
-  contentSourceToPromise,
   dateTimeToTime,
   defaultAuthor,
   errors,
