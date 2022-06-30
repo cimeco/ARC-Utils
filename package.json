@@ -1,6 +1,6 @@
 {
   "name": "@cimeco/utils",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "utilities",
   "main": "src/index.js",
   "scripts": {
@@ -22,7 +22,6 @@
   "dependencies": {
     "lodash": "^4.17.21",
     "moment": "^2.29.3",
-    "request-promise-native": "^1.0.9",
     "thumbor": "^0.1.5"
   },
   "devDependencies": {
