@@ -14,7 +14,7 @@ export default function getUrlBySite(
 
   let _url = url.replace('/homepage', '');
   if (keepParams) _url = _url.replace(/[?].+/, '');
-  if (ENVIRONMENT === 'grupoclarin' || url.includes('http')) {
+  if (!ENVIRONMENT.includes(-sandbox) || !ENVIRONMENT.includes(localhost) || url.includes('http')) {
     return _url.endsWith('/') ? _url : `${_url}/`;
   }
 
