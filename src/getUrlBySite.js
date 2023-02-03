@@ -17,7 +17,6 @@ export default function getUrlBySite(
   if (keepParams) _url = _url.replace(/[?].+/, '');
   if (
     ENVIRONMENT !== "localhost" ||
-    ENVIRONMENT !== "sandbox" ||
     url.includes("http")
   ) {
     return _url.endsWith('/') ? _url : `${_url}/`;
