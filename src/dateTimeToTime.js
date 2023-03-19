@@ -1,10 +1,11 @@
-import 'moment/locale/es';
 import moment from 'moment';
+import 'moment-timezone';
 
-export default function dateTimeToTime(dateTime, timezone) {
-  moment.locale('es');
-  const displayDate = moment(dateTime).tz(
-    timezone || 'America/Argentina/Buenos_Aires'
-  );
-  return displayDate.format('HH:mm');
-}
+moment.locale('es');
+
+const TIME_FORMAT = 'HH:mm';
+
+export default (dateTime, timezone = 'America/Argentina/Buenos_Aires') => {
+  const displayDate = moment(dateTime).tz(timezone);
+  return displayDate.format(TIME_FORMAT);
+};
