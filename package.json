@@ -1,6 +1,6 @@
 {
   "name": "@cimeco/utils",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "utilities",
   "main": "src/index.js",
   "scripts": {
