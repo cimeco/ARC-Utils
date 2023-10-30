@@ -1,6 +1,6 @@
 {
   "name": "@cimeco/utils",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "utilities",
   "main": "src/index.js",
   "scripts": {
@@ -21,8 +21,7 @@
   "homepage": "https://github.com/cimeco/utils#readme",
   "dependencies": {
     "lodash": "^4.17.21",
-    "moment": "^2.29.3",
-    "moment-timezone": "^0.5.41",
+    "luxon": "^3.4.3",
     "thumbor": "^0.1.5"
   },
   "devDependencies": {

@@ -1,15 +1,13 @@
 /* eslint-disable no-nested-ternary */
 import getProperties from 'fusion:properties';
 import _ from 'lodash';
-import moment from 'moment';
-import 'moment-timezone';
+import { DateTime } from "luxon";
 import getSectionBySite from '../story/getSectionBySite';
 import getUrlBySite from '../getUrlBySite';
 import resizeImage from '../story/resizeImage';
 
 export default (
   data,
-  navigation,
   requestUri,
   arcSite,
   contextPath,
@@ -30,6 +28,8 @@ export default (
     ? data.websites[arcSite].website_url
     : requestUri;
 
+  const timezone = properties.site.timezone || "America/Argentina/Buenos_Aires";
+
   const values = {
     description: !_.isUndefined(data.subheadlines)
       ? data.subheadlines.basic
@@ -43,12 +43,12 @@ export default (
       ? getSectionBySite(data, arcSite).name
       : '',
     cXenseParse_article_id: data._id,
-    publish_time: moment(data.first_publish_date)
-      .tz(properties.site.timezone || 'America/Argentina/Buenos_Aires')
-      .format(),
-    lastmod: moment(data.last_updated_date)
-      .tz(properties.site.timezone || 'America/Argentina/Buenos_Aires')
-      .format(),
+    publish_time: DateTime.fromJSDate(new Date(data.first_publish_date))
+      .setZone(timezone)
+      .toFormat("yyyy-MM-dd'T'HH:mm:ssZZ"),
+    lastmod: DateTime.fromJSDate(new Date(data.last_updated_date))
+      .setZone(timezone)
+      .toFormat("yyyy-MM-dd'T'HH:mm:ssZZ"),
     auth:
       !_.isUndefined(data.credits) &&
       !_.isUndefined(data.credits.by) &&

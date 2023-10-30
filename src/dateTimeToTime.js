@@ -1,11 +1,10 @@
-import moment from 'moment';
-import 'moment-timezone';
+import { DateTime as LuxonDateTime, Settings } from "luxon";
 
-moment.locale('es');
+Settings.defaultLocale = "es";
 
-const TIME_FORMAT = 'HH:mm';
-
-export default (dateTime, timezone = 'America/Argentina/Buenos_Aires') => {
-  const displayDate = moment(dateTime).tz(timezone);
-  return displayDate.format(TIME_FORMAT);
+export default (dateTime, timezone) => {
+  const displayDate = LuxonDateTime.fromJSDate(dateTime, {
+    zone: timezone || "America/Argentina/Buenos_Aires",
+  });
+  return displayDate.toFormat("HH:mm");
 };
