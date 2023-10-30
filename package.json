@@ -1,6 +1,6 @@
 {
   "name": "@cimeco/utils",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "utilities",
   "main": "src/index.js",
   "scripts": {
@@ -21,7 +21,7 @@
   "homepage": "https://github.com/cimeco/utils#readme",
   "dependencies": {
     "lodash": "^4.17.21",
-    "moment": "^2.29.3",
+    "luxon": "^3.4.3",
     "thumbor": "^0.1.5"
   },
   "devDependencies": {
@@ -36,10 +36,5 @@
     "eslint-plugin-import": "^2.26.0",
     "jest": "^28.1.0",
     "prettier": "^2.6.2"
-  },
-  "jest": {
-    "setupFilesAfterEnv": [
-      "<rootDir>/src/setupTests.js"
-    ]
   }
 }
