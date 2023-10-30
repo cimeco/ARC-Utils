@@ -11,6 +11,7 @@ import getTaxonomyData from './getTaxonomyData';
 import getTaxonomyPathData from './getTaxonomyPathData';
 import getUrl from './getUrl';
 import isPremium from './isPremium';
+import isVideo from './isVideo';
 import resizeImage from './resizeImage';
 
 export {
@@ -27,5 +28,6 @@ export {
   getTaxonomyPathData,
   getUrl,
   isPremium,
+  isVideo,
   resizeImage
 };

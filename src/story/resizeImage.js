@@ -5,6 +5,7 @@ import Thumbor from 'thumbor';
 export default function resizeImage(imageObject, size, serverUrl) {
   const { width, height } = size;
   const thumbor = new Thumbor(THUMBOR_KEY, serverUrl);
+  const filterQuality = 75;
 
   const hasFocalPoint =
     !_.isNil(imageObject) && !_.isNil(imageObject.focal_point);
@@ -50,11 +51,15 @@ export default function resizeImage(imageObject, size, serverUrl) {
     ? thumbor
         .setImagePath(urlWithoutProtocol)
         .crop(...computeCrop())
+        .filter(`quality(${filterQuality})`)
+        .filter(`format(webp)`)
         .resize(width, height)
         .buildUrl()
     : thumbor
         .setImagePath(urlWithoutProtocol)
         .resize(width, height)
+        .filter(`quality(${filterQuality})`)
+        .filter(`format(webp)`)
         .smartCrop(true)
         .buildUrl();
 }
